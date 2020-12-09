@@ -7,7 +7,7 @@ let HEIGHT_SMALL = 480;
 
 let height = 0;
 let width = 0;
-let vga = {width: {exact: 640}, height: {exact: 480}};
+
 
 let N_FRAMES_FPS_COUNT = 20
 
@@ -36,7 +36,7 @@ function roundAdvanced(inp) {
 
 function startCamera() {
   if (streaming) return;
-  navigator.mediaDevices.getUserMedia({video: vga, audio: false, facingMode:'environment'})
+  navigator.mediaDevices.getUserMedia({video: resolution, audio: false, facingMode:'environment'})
     .then(function(s) {
     stream = s;
     video.srcObject = s;
